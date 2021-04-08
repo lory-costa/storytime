@@ -1,7 +1,7 @@
 export default function Home(props) {
   return (
     <div className="container">
-      <h1 className="title">HOME</h1>
+      <h1 className="title">LOGO</h1>
       <div className="row">
         <div className="col">1</div>
         <div className="col">2</div>
@@ -12,6 +12,7 @@ export default function Home(props) {
         <div className="col">7</div>
         <div className="col">8</div>
         <div className="col">9</div>
+        <button className="submit">Create Story</button>
       </div>
     </div>
   );
