@@ -2,13 +2,29 @@
   box-sizing: border-box;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background-color: lightskyblue;
+  background: rgb(164, 225, 226);
+  background: linear-gradient(
+    0deg,
+    rgba(164, 225, 226, 1) 0%,
+    rgba(255, 229, 172, 1) 100%
+  );
 }
 
 .title {
-  margin-bottom: 60px 0 100px;
+  margin: 10vh 0 100px;
   text-align: center;
+  font-size: 50px;
+  color: #589696;
+}
+
+article {
+  line-height: 2;
+  font-size: 22px;
 }
 
 .container {
@@ -28,10 +44,28 @@ body {
   padding: 30px 20px;
 }
 
+.col label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.col input {
+  padding: 8px 12px;
+  font-size: 22px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ffffff70;
+}
+
 .submit {
   margin: 100px auto;
   border: 2px;
   border-color: black;
   border-radius: 5px;
-  padding: 5px;
+  padding: 8px 30px;
+  font-size: 20px;
+  background-color: #df89bc;
+  color: white;
+  cursor: pointer;
 }
