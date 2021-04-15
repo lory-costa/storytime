@@ -58,7 +58,8 @@ article {
   background-color: #ffffff70;
 }
 
-.submit {
+.submit,
+.button {
   margin: 100px auto;
   border: 2px;
   border-color: black;
@@ -68,4 +69,10 @@ article {
   background-color: #df89bc;
   color: white;
   cursor: pointer;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
