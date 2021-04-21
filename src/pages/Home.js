@@ -26,12 +26,12 @@ export default function Home(props) {
       <h1 className='title'>StoryTime</h1>
       <div className='row'>
         <div className='col'>
-          <label className='label' htmlFor='Your name'>
-            Your name
+          <label className='label' htmlFor='Name'>
+            Name
           </label>
           <input
-            id='Your name'
-            name='Your name'
+            id='Name'
+            name='Name'
             type='text'
             onChange={handleChange}
             required
@@ -42,26 +42,18 @@ export default function Home(props) {
           <label className='label' htmlFor='Gender'>
             Gender
           </label>
-          <input
+          <select
             id='Gender'
             name='Gender'
             type='text'
             onChange={handleChange}
             required
-          />
-        </div>
-
-        <div className='col'>
-          <label className='label' htmlFor='Place'>
-            Place
-          </label>
-          <input
-            id='Place'
-            name='Place'
-            type='text'
-            onChange={handleChange}
-            required
-          />
+          >
+            <option></option>
+            <option value='boy'>Boy</option>
+            <option value='girl'>Girl</option>
+            <option value='child'>Neutral</option>
+          </select>
         </div>
 
         <div className='col'>
@@ -78,6 +70,25 @@ export default function Home(props) {
         </div>
 
         <div className='col'>
+          <label className='label' htmlFor='Place'>
+            Place
+          </label>
+          <select
+            id='Place'
+            name='Place'
+            type='text'
+            onChange={handleChange}
+            required
+          >
+            <option></option>
+            <option value='castle'>Castle</option>
+            <option value='cave'>Cave</option>
+            <option value='spooky house'>Spooky House</option>
+            <option value='spaceship'>Spaceship</option>
+          </select>
+        </div>
+
+        <div className='col'>
           <label className='label' htmlFor='Special Place'>
             Special Place
           </label>
@@ -91,16 +102,22 @@ export default function Home(props) {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Another Friend'>
-            Another Friend
+          <label className='label' htmlFor='Character'>
+            Character
           </label>
-          <input
-            id='Another Friend'
-            name='Another Friend'
+          <select
+            id='Character'
+            name='Character'
             type='text'
             onChange={handleChange}
             required
-          />
+          >
+            <option></option>
+            <option value='mermaid'>Mermaid</option>
+            <option value='dinosaur'>Dinosaur</option>
+            <option value='unicorn'>Unicorn</option>
+            <option value='astronaut'>Astronaut</option>
+          </select>
         </div>
 
         <input className='submit' type='submit' value='Create Story' />

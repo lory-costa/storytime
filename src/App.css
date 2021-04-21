@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -16,15 +18,21 @@ body {
 }
 
 .title {
+  font-family: "Emilys Candy", cursive;
   margin: 10vh 0 100px;
   text-align: center;
-  font-size: 50px;
+  font-size: 80px;
   color: #589696;
 }
 
+#storyTitle {
+  text-align: left;
+  margin-bottom: 0;
+}
+
 article {
-  line-height: 2;
-  font-size: 22px;
+  line-height: 1.8;
+  font-size: 26px;
 }
 
 .container {
@@ -50,12 +58,17 @@ article {
   font-size: 18px;
 }
 
-.col input {
+.col input,
+select {
   padding: 8px 12px;
   font-size: 22px;
   border-radius: 10px;
   border: none;
   background-color: #ffffff70;
+}
+
+select {
+  width: 100%;
 }
 
 .submit,
@@ -66,13 +79,13 @@ article {
   border-radius: 5px;
   padding: 8px 30px;
   font-size: 20px;
-  background-color: #df89bc;
-  color: white;
+  background-color: #f1e0b2;
+  color: #4a8080;
   cursor: pointer;
   display: flex;
 }
 
 a {
   text-decoration: none;
-  color: white;
+  color: #4a8080;
 }
