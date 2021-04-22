@@ -116,7 +116,7 @@ export default function Home(props) {
             <option value='mermaid'>Mermaid</option>
             <option value='dinosaur'>Dinosaur</option>
             <option value='unicorn'>Unicorn</option>
-            <option value='astronaut'>Astronaut</option>
+            <option value='dragon'>Dragon</option>
           </select>
         </div>
 

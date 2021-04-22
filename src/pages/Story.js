@@ -32,20 +32,19 @@ export default function Story(props) {
         <p>
           One day,
           <strong> {parsedForm["Name"]}</strong> decided to go on an adventure.{" "}
-          {getGender()} left the <strong>{parsedForm["Place"]}</strong>, with{" "}
-          {getGender("possessive")} friend{" "}
+          {getGender()} left the <strong>{parsedForm["Place"]}</strong> with{" "}
+          {getGender("possessive")} best friend{" "}
           <strong>{parsedForm["Best Friend"]}</strong>.
         </p>
         <p>
-          They walked for a long time until they reached a{" "}
-          <strong>{parsedForm["Special Place"]}</strong>. There they met a{" "}
-          <strong>{parsedForm["Character"]}</strong> who lived in the{" "}
-          <strong>{parsedForm["Special Place"]}</strong>.
+          They walked for a long time until they reached{" "}
+          <strong>{parsedForm["Special Place"]}</strong>, where they met a{" "}
+          <strong>{parsedForm["Character"]}</strong>.
         </p>
         <p>
           <strong> {parsedForm["Name"]}</strong> and the{" "}
-          <strong>{parsedForm["Character"]}</strong> became friends and visited
-          each other often.
+          <strong>{parsedForm["Character"]}</strong> became friends and lived
+          happily ever after.
         </p>
       </article>
       <button className='button'>
