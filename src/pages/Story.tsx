@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function Story(props) {
+export default function Story() {
   const form = localStorage.getItem("form");
-  const parsedForm = JSON.parse(form);
+  const parsedForm = form && JSON.parse(form);
 
-  const getGender = (option) => {
+  const getGender = (option: string | undefined) => {
     const gender = parsedForm["Gender"];
     if (gender === "boy") {
       return option === "possessive" ? "his" : "He";
@@ -32,8 +32,8 @@ export default function Story(props) {
         <p>
           One day,
           <strong> {parsedForm["Name"]}</strong> decided to go on an adventure.{" "}
-          {getGender()} left the <strong>{parsedForm["Place"]}</strong> with{" "}
-          {getGender("possessive")} best friend{" "}
+          {getGender(undefined)} left the <strong>{parsedForm["Place"]}</strong>{" "}
+          with {getGender("possessive")} best friend{" "}
           <strong>{parsedForm["Best Friend"]}</strong>.
         </p>
         <p>

@@ -2,18 +2,18 @@ import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
 
-export default function Home(props) {
+export default function Home() {
   const [form, setForm] = useState({});
 
   let history = useHistory();
 
-  function handleSubmit(event) {
+  function handleSubmit(event: { preventDefault: () => void }) {
     event.preventDefault();
     localStorage.setItem("form", JSON.stringify(form));
     history.push("/story");
   }
 
-  function handleChange(event) {
+  function handleChange(event: { target: { name: any; value: any } }) {
     const { name, value } = event.target;
     setForm({
       ...form,
@@ -42,13 +42,7 @@ export default function Home(props) {
           <label className='label' htmlFor='Gender'>
             Gender
           </label>
-          <select
-            id='Gender'
-            name='Gender'
-            type='text'
-            onChange={handleChange}
-            required
-          >
+          <select id='Gender' name='Gender' onChange={handleChange} required>
             <option></option>
             <option value='boy'>Boy</option>
             <option value='girl'>Girl</option>
@@ -73,13 +67,7 @@ export default function Home(props) {
           <label className='label' htmlFor='Place'>
             Place
           </label>
-          <select
-            id='Place'
-            name='Place'
-            type='text'
-            onChange={handleChange}
-            required
-          >
+          <select id='Place' name='Place' onChange={handleChange} required>
             <option></option>
             <option value='castle'>Castle</option>
             <option value='cave'>Cave</option>
@@ -108,7 +96,6 @@ export default function Home(props) {
           <select
             id='Character'
             name='Character'
-            type='text'
             onChange={handleChange}
             required
           >
