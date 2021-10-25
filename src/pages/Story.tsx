@@ -5,7 +5,7 @@ export default function Story() {
   const parsedForm = form && JSON.parse(form);
 
   const getGender = (option: string | undefined) => {
-    const gender = parsedForm["Gender"];
+    const gender = parsedForm["gender"];
     if (gender === "boy") {
       return option === "possessive" ? "his" : "He";
     } else if (gender === "girl") {
@@ -13,6 +13,10 @@ export default function Story() {
     } else {
       return option === "possessive" ? "their" : "They";
     }
+  };
+
+  const capitalise = (s: string) => {
+    return s.charAt(0).toUpperCase() + s.slice(1);
   };
 
   return (
@@ -23,27 +27,27 @@ export default function Story() {
       <article>
         <p>
           ... there was a little
-          <strong> {parsedForm["Gender"]}</strong> named
-          <strong> {parsedForm["Name"]}</strong> who lived in a
-          <strong> {parsedForm["Place"]}</strong> and spent{" "}
+          <strong> {parsedForm["gender"]}</strong> named
+          <strong> {capitalise(parsedForm["name"])}</strong> who lived in a
+          <strong> {parsedForm["place"]}</strong> and spent{" "}
           {getGender("possessive")} days playing with the friendly animals who
           lived in the forest nearby.
         </p>
         <p>
           One day,
-          <strong> {parsedForm["Name"]}</strong> decided to go on an adventure.{" "}
-          {getGender(undefined)} left the <strong>{parsedForm["Place"]}</strong>{" "}
-          with {getGender("possessive")} best friend{" "}
-          <strong>{parsedForm["Best Friend"]}</strong>.
+          <strong> {capitalise(parsedForm["name"])}</strong> decided to go on an
+          adventure. {getGender(undefined)} left the{" "}
+          <strong>{parsedForm["place"]}</strong> with {getGender("possessive")}{" "}
+          best friend <strong>{capitalise(parsedForm["bestFriend"])}</strong>.
         </p>
         <p>
           They walked for a long time until they reached{" "}
-          <strong>{parsedForm["Special Place"]}</strong>, where they met a{" "}
-          <strong>{parsedForm["Character"]}</strong>.
+          <strong>{parsedForm["specialPlace"]}</strong>, where they met a{" "}
+          <strong>{parsedForm["character"]}</strong>.
         </p>
         <p>
-          <strong> {parsedForm["Name"]}</strong> and the{" "}
-          <strong>{parsedForm["Character"]}</strong> became friends and lived
+          <strong> {capitalise(parsedForm["name"])}</strong> and the{" "}
+          <strong>{parsedForm["character"]}</strong> became friends and lived
           happily ever after.
         </p>
       </article>

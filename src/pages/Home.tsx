@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
+import { StoryType } from "../types/StoryType";
+import { addStory } from "../utils/firebase";
 
 export default function Home() {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState<StoryType>();
 
   let history = useHistory();
 
@@ -11,13 +13,15 @@ export default function Home() {
     event.preventDefault();
     localStorage.setItem("form", JSON.stringify(form));
     history.push("/story");
+
+    form && addStory(form);
   }
 
-  function handleChange(event: { target: { name: any; value: any } }) {
-    const { name, value } = event.target;
+  function handleChange(event: { target: { id: any; value: any } }) {
+    const { id, value } = event.target;
     setForm({
       ...form,
-      [name]: value,
+      [id]: value,
     });
   }
 
@@ -26,11 +30,11 @@ export default function Home() {
       <h1 className='title'>StoryTime</h1>
       <div className='row'>
         <div className='col'>
-          <label className='label' htmlFor='Name'>
+          <label className='label' htmlFor='name'>
             Name
           </label>
           <input
-            id='Name'
+            id='name'
             name='Name'
             type='text'
             onChange={handleChange}
@@ -39,10 +43,10 @@ export default function Home() {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Gender'>
+          <label className='label' htmlFor='gender'>
             Gender
           </label>
-          <select id='Gender' name='Gender' onChange={handleChange} required>
+          <select id='gender' name='Gender' onChange={handleChange} required>
             <option></option>
             <option value='boy'>Boy</option>
             <option value='girl'>Girl</option>
@@ -51,11 +55,11 @@ export default function Home() {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Best Friend'>
+          <label className='label' htmlFor='bestFriend'>
             Best Friend
           </label>
           <input
-            id='Best Friend'
+            id='bestFriend'
             name='Best Friend'
             type='text'
             onChange={handleChange}
@@ -64,10 +68,10 @@ export default function Home() {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Place'>
+          <label className='label' htmlFor='place'>
             Place
           </label>
-          <select id='Place' name='Place' onChange={handleChange} required>
+          <select id='place' name='Place' onChange={handleChange} required>
             <option></option>
             <option value='castle'>Castle</option>
             <option value='cave'>Cave</option>
@@ -77,11 +81,11 @@ export default function Home() {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Special Place'>
+          <label className='label' htmlFor='specialPlace'>
             Special Place
           </label>
           <input
-            id='Special Place'
+            id='specialPlace'
             name='Special Place'
             type='text'
             onChange={handleChange}
@@ -90,11 +94,11 @@ export default function Home() {
         </div>
 
         <div className='col'>
-          <label className='label' htmlFor='Character'>
+          <label className='label' htmlFor='character'>
             Character
           </label>
           <select
-            id='Character'
+            id='character'
             name='Character'
             onChange={handleChange}
             required

@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  serverTimestamp,
+} from "firebase/firestore/lite";
+import { StoryType } from "../types/StoryType";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB4OSpUarfIWVRIxDWIe57PaYdgSorCMHk",
@@ -24,4 +31,15 @@ export async function getStories() {
   const storiesList = storiesSnapshot.docs.map((doc) => doc.data());
 
   return storiesList;
+}
+
+// Add a new story to the stories collection
+export async function addStory(story: StoryType) {
+  const docRef = await addDoc(collection(db, "stories"), {
+    // author: "userId",
+    content: story,
+    createdAt: serverTimestamp(),
+  });
+
+  return docRef;
 }
